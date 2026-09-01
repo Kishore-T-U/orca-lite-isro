@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ORCA: AI-Powered Maritime Safety & Geospatial Intelligence System
 
-## Getting Started
+> An automated marine safety broadcast and sovereign border defense engine integrating real-time INCOIS/ERDDAP telemetry with a pure deterministic safety engine and localized AI broadcasting.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Live Deployment & Demo
+* **Live Application URL:** [Insert Your Live Deployment Link Here]
+* **Repository:** [GitHub Repository Link]
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧭 Executive Overview
+**ORCA** is an advanced marine safety and geospatial intelligence platform built to protect artisanal and commercial fishermen operating near international maritime boundaries and unpredictable coastal weather systems. By combining a **pure deterministic safety core** with **Gemini 1.5 Flash-powered localized voice/text broadcasting**, ORCA guarantees absolute safety compliance, zero AI hallucinations on critical thresholds, and flawless resilience during extreme weather and cellular network blackouts.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ⚡ Key Core Features & Architecture
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Pure Deterministic First Safety Engine (`orcaEngine.ts`)
+* **Zero-Risk Architecture:** Life-and-death maritime decisions are governed strictly by hardcoded mathematical logic. The system never relies on generative AI to decide whether a vessel is in danger or breaching a border.
+* **Strict Hazard Priority Hierarchy:** 
+  1. *Severe Weather / Cyclones* (Absolute Priority)
+  2. *Sovereign Border Breach* (Anti-Approach Enforcement)
+  3. *Moderate Advisory / Squalls*
+  4. *Favorable Fishing Windows* (Potential Fishing Zones - PFZ)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. Storm-Resilient Offline Telemetry Pipeline (`erddapClient.ts`)
+* **Real-time INCOIS / ERDDAP / Open-Meteo Integration:** Streams live wind vectors, wave height swells, sea surface temperature (SST), and chlorophyll-a spatial gradients.
+* **4-Second Emergency Timeout:** Designed for cyclone conditions where cellular networks degrade, dropping slow connections before they can freeze the app.
+* **In-Memory Fallback Cache:** Automatically preserves and serves the last successfully fetched oceanographic data packet during total cellular or internet blackouts, guaranteeing 100% operational continuity.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3. Fuel-Optimized Vector Return Routing
+* Calculates the optimal, shortest return vector back to domestic safe harbors (such as Chennai or Kasimedu Harbour) factoring in current wind shear velocity and navigational drift.
 
-## Deploy on Vercel
+### 4. Professional News-Desk Localized AI Broadcasting
+* Powered by **Gemini 1.5 Flash**, translating complex telemetry grids into formal, objective, news-anchor broadcasts.
+* Fully localized in **Tamil (தமிழ்), Telugu (తెలుగు), Hindi (हिंदी), and English**, completely devoid of casual slang or colloquialisms.
+* **Speakable AI Voice Pipeline:** Converts safety advisories into accessible audio summaries for rapid dissemination.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 5. Interactive Leaflet Spatial Map & Geofence Visualization
+* Real-time rendering of vessel coordinates, maritime boundary lines, safe harbor nodes, and PFZ thermal front offsets.
+* Custom UI states and smooth color transitions (Emerald for favorable conditions, Amber for warnings, Crimson for severe border/storm alerts).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🛠️ Technology Stack & Dependencies
+
+* **Framework:** Next.js (App Router, Server Actions, API Routes)
+* **Language:** TypeScript
+* **Styling & UI:** Tailwind CSS, Lucide Icons
+* **Mapping:** Leaflet / React-Leaflet
+* **AI Engine:** Google Generative AI (`gemini-1.5-flash`)
+* **Data Standards:** INCOIS Ocean State Forecasts (OSF) & ERDDAP RESTful griddap telemetry formats
+
+---
+
+## 📂 Project Directory Structure
+
+```text
+orca-lite-isro/
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   └── orca/
+│   │   │       └── route.ts       # Core backend fusion & Gemini broadcast endpoint
+│   │   ├── layout.tsx             # Root layout with hydration safety
+│   │   └── page.tsx               # Main interactive geospatial dashboard UI
+│   ├── components/                # Map, telemetry card, and audio broadcast components
+│   └── lib/
+│       ├── erddapClient.ts        # Live INCOIS/Open-Meteo fetcher & offline memory cache
+│       ├── orcaEngine.ts          # Pure deterministic safety & hazard hierarchy engine
+│       └── types.ts               # Shared TypeScript interfaces & harbour datasets
+├── public/                        # Static assets and map markers
+├── tailwind.config.ts             # Custom design tokens
+└── README.md
