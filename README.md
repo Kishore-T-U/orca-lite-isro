@@ -5,8 +5,8 @@
 ---
 
 ## 🚀 Live Deployment & Demo
-* **Live Application URL:** [Insert Your Live Deployment Link Here]
-* **Repository:** [GitHub Repository Link]
+* **Live Application URL:** [https://orca-lite-isro.vercel.app/]
+* **Repository:** [https://github.com/Kishore-T-U/orca-lite-isro]
 
 ---
 
@@ -50,7 +50,7 @@
 * **Language:** TypeScript
 * **Styling & UI:** Tailwind CSS, Lucide Icons
 * **Mapping:** Leaflet / React-Leaflet
-* **AI Engine:** Google Generative AI (`gemini-1.5-flash`)
+* **AI Engine:** Google Generative AI (`gemini-3.5-flash-lite`)
 * **Data Standards:** INCOIS Ocean State Forecasts (OSF) & ERDDAP RESTful griddap telemetry formats
 
 ---
