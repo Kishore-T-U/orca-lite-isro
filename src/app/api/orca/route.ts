@@ -33,18 +33,15 @@ export async function POST(req: NextRequest) {
 
     // 4. Calculate Optimal Return Route
     const optimalRoute = findOptimalReturnRoute(
-      targetLocation.lat, 
-      targetLocation.lng, 
-      liveData.windSpeedKts, 
+      targetLocation.lat,
+      targetLocation.lng,
+      liveData.windSpeedKts,
       180
     );
 
-    // 5. CALIBRATED GEOGRAPHIC BORDER THRESHOLD
-    // Lower this number (e.g., to 80.28) if the visual line on your map sits further west, 
-    // or raise it if it sits further east. You can check your terminal logs to match it precisely.
-    const GEOFENCE_LONGITUDE_LIMIT = 80.28; 
-
-    const isBeyondBorder = targetLocation.lng > GEOFENCE_LONGITUDE_LIMIT || activeScenario === "border_alert" || activeScenario === "border_conflict";
+    // 5. GEOGRAPHIC BORDER STATUS
+    // Controlled explicitly by the demo scenario buttons to prevent false coordinate triggers
+    const isBeyondBorder = (activeScenario === "border_alert" || activeScenario === "border_conflict");
 
     // 6. Apply live mathematical grid & weather results with strict Hazard Prioritization
     if (activeScenario === "normal") {
