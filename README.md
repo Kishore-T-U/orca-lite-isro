@@ -9,6 +9,30 @@
 * **Repository:** [https://github.com/Kishore-T-U/orca-lite-isro]
 
 ---
+## 🕹️ User Instructions & Operational Guide
+
+Once you launch the ORCA dashboard locally or via the live deployment link, follow these instructions to test its core capabilities:
+
+### 1. Simulating Emergency Scenarios
+At the top or control panel of the dashboard, you will find scenario selection triggers:
+* **Normal (PFZ):** Simulates safe coastal conditions, displaying sea surface temperature (SST), wave heights ($1.3\text{m}$), and verified Potential Fishing Zones (PFZ) with chlorophyll-a enrichment.
+* **Cyclone Warning:** Triggers the deterministic severe weather rule engine (`weatherCode >= 95` or wind speeds $\ge 25\text{ knots}$), overriding all other states to issue a strict **"DO NOT PROCEED"** hazard broadcast.
+* **Border Alert:** Simulates an artisanal vessel approaching or crossing the international maritime boundary line, triggering the anti-approach enforcement protocol and port return vector.
+
+### 2. Language Localization & Voice Synthesis
+* **Instant Translation:** Tap the language buttons (**English**, **தமிழ்**, **Telugu**, **हिंदी**) in the top right header to instantly re-render the broadcast through Gemini 1.5 Flash into a formal, news-desk anchor tone.
+* **Speakable AI:** Click the audio icon on the broadcast card to listen to the synthesized safety advisory.
+
+### 3. Testing Offline Resilience
+* To test the **INCOIS/ERDDAP Memory-Cached Fallback**:
+  1. Open your browser's Developer Tools (`F12`) and go to the **Network** tab.
+  2. Set your network throttling to **Offline**.
+  3. Refresh the page or trigger a query. The system will seamlessly fall back to the last known valid telemetry packet stored in memory, ensuring zero downtime during cellular blackouts.
+
+### 4. Spatial Map Interaction
+* Click anywhere on the Leaflet map to update your simulated vessel coordinates. The backend instantly computes localized marine telemetry, wave vector math, and fuel-optimized return routes back to safe domestic harbours.
+
+---
 
 ## 🧭 Executive Overview
 **ORCA** is an advanced marine safety and geospatial intelligence platform built to protect artisanal and commercial fishermen operating near international maritime boundaries and unpredictable coastal weather systems. By combining a **pure deterministic safety core** with **Gemini 1.5 Flash-powered localized voice/text broadcasting**, ORCA guarantees absolute safety compliance, zero AI hallucinations on critical thresholds, and flawless resilience during extreme weather and cellular network blackouts.
@@ -52,6 +76,7 @@
 * **Mapping:** Leaflet / React-Leaflet
 * **AI Engine:** Google Generative AI (`gemini-3.5-flash-lite`)
 * **Data Standards:** INCOIS Ocean State Forecasts (OSF) & ERDDAP RESTful griddap telemetry formats
+
 
 ---
 
